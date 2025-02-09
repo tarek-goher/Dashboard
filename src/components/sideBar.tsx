@@ -9,10 +9,9 @@ import ListItemText from "@mui/material/ListItemText";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
-
 import { grey } from "@mui/material/colors";
-
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import Logo from '../../public/assest/photo-Tarek.jpg'
 import {
   BarChartOutlined,
   CalendarTodayOutlined,
@@ -132,7 +131,7 @@ const Sidebarr: React.FC<SidebarProps> = ({ open, handleDrawerClose }) => {
 
       <Avatar
         alt="Remy Sharp"
-        src="public\assest\photo-Tarek.jpg"
+        src={Logo}
         sx={{
           mx: "auto",
           height: open ? 100 : 44,

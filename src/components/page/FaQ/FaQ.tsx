@@ -10,10 +10,10 @@ import Header from "../../Heder";
 const FaQ = () => {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+  
   return (
     <div>
       <Header title={'FAQ'} suptitle={'Frequently Ased Qusestions page'} isdashboard={false}/>

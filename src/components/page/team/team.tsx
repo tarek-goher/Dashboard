@@ -109,7 +109,7 @@ const Team = () => {
   return (
   <Box>
     <Box sx={{ height: 600, width: "98%", mx: "auto" }}>
-        <Header title={"TEAM"} suptitle={"Managing the team members"}/>
+        <Header title={"TEAM"} suptitle={"Managing the team members"} isdashboard={false}/>
       <DataGrid rows={rows} columns={columns} />
     </Box>
     </Box>

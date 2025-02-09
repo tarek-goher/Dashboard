@@ -1,14 +1,18 @@
 {
+  "homepage": "https://tarek-goher.github.io/E-commerce-",
   "name": "dash-bord",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "predeploy": "npm run build", 
+  "deploy": "gh-pages -d dist", 
+  "build": "tsc -b && vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
+
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

@@ -4,17 +4,18 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { Box, IconButton, Stack, styled, useTheme } from "@mui/material";
 
 import { alpha } from "@mui/material/styles";
-import SearchIcon  from "@mui/icons-material/Search";
+import SearchIcon from "@mui/icons-material/Search";
 
 import InputBase from "@mui/material/InputBase";
 
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import { light, PaletteMode } from "@mui/material/styles/createPalette";
-// import , { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import React, { Dispatch, SetStateAction } from "react";
+
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { PaletteMode } from "@mui/material/styles/createPalette";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -87,11 +88,11 @@ const AppBar = styled(MuiAppBar, {
 interface TobparProps {
   open: boolean;
   handleDrawerOpen: () => void;
-  // setMode: (mode: PaletteMode) => void;
+  setMode: Dispatch<SetStateAction<PaletteMode>>;
 }
 
-const Tobpar: React.FC<TobparProps> = ({ open, handleDrawerOpen , setMode }) => {
-  const theme=useTheme()
+const Tobpar: React.FC<TobparProps> = ({ open, handleDrawerOpen, setMode }) => {
+  const theme = useTheme();
 
   return (
     <AppBar position="fixed" open={open}>
@@ -119,42 +120,43 @@ const Tobpar: React.FC<TobparProps> = ({ open, handleDrawerOpen , setMode }) => 
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
-        
-        <Box flexGrow={1}/>
 
-        <Stack direction={"row"}  alignItems={"center"} >
+        <Box flexGrow={1} />
 
-      {theme.palette.mode === "light" ?
-      
-      <IconButton onClick={()=>{
-
-        localStorage.setItem("mode" , theme.palette.mode === "dark"? "light" : "dark" )
-         setMode((prevMode: PaletteMode) =>
-          prevMode === 'light' ? 'dark' : 'light',
-        );
-      }} color="inherit" aria-label="delete">
-            <LightModeOutlinedIcon />
-          </IconButton>
-      :   <IconButton onClick={()=>{
-
-        localStorage.setItem("mode" , theme.palette.mode === "dark"? "light" : "dark")
-         setMode((prevMode: PaletteMode) =>
-          prevMode === 'light' ? 'dark' : 'light',
-        );
-      }} color="inherit" aria-label="delete">
-      <DarkModeOutlinedIcon />
-    </IconButton>
-      
-      }
-        
-          
-
-
-
-
-
-
-
+        <Stack direction={"row"} alignItems={"center"}>
+          {theme.palette.mode === "light" ? (
+            <IconButton
+              onClick={() => {
+                localStorage.setItem(
+                  "mode",
+                  theme.palette.mode === "dark" ? "light" : "dark"
+                );
+                setMode((prevMode: PaletteMode) =>
+                  prevMode === "light" ? "dark" : "light"
+                );
+              }}
+              color="inherit"
+              aria-label="delete"
+            >
+              <LightModeOutlinedIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              onClick={() => {
+                localStorage.setItem(
+                  "mode",
+                  theme.palette.mode === "dark" ? "light" : "dark"
+                );
+                setMode((prevMode: PaletteMode) =>
+                  prevMode === "light" ? "dark" : "light"
+                );
+              }}
+              color="inherit"
+              aria-label="delete"
+            >
+              <DarkModeOutlinedIcon />
+            </IconButton>
+          )}
 
           <IconButton color="inherit" aria-label="delete">
             <NotificationsNoneOutlinedIcon />

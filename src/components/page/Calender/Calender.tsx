@@ -43,10 +43,6 @@ const Calender = () => {
     },
   });
 
-  //   const handleWeekendsToggle = () => {
-  //     setWeekendsVisible(!weekendsVisible);
-  //   };
-
   const handleDateSelect = (selectInfo: any) => {
     const title = prompt("Please enter a new title for your event") || "";
     const calendarApi = selectInfo.view.calendar;
@@ -73,8 +69,16 @@ const Calender = () => {
     }
   };
 
-  const handleEvents = (events: Event[]) => {
-    setCurrentEvents(events);
+  // دالة handleEvents التي تقبل الأنواع المطلوبة بدون الحاجة لـ EventApi
+  const handleEvents = (events: any[]) => {
+    const eventList: Event[] = events.map(event => ({
+      id: event.id.toString(),
+      title: event.title,
+      start: event.startStr,
+      end: event.endStr,
+      allDay: event.allDay,
+    }));
+    setCurrentEvents(eventList);
   };
 
   const renderEventContent = (eventInfo: any) => {
@@ -166,7 +170,7 @@ const Calender = () => {
               select={handleDateSelect}
               eventContent={renderEventContent}
               eventClick={handleEventClick}
-              eventsSet={handleEvents}
+              eventsSet={handleEvents}  // دالة handleEvents
             />
           </div>
         </div>
