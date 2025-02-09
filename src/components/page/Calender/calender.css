@@ -1,0 +1,180 @@
+/* Main container styles */
+.demo-app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .demo-app-main {
+    flex: 1;
+    padding: 20px;
+    min-height: 100%;
+  }
+  
+  /* Sidebar styles */
+  .demo-app-sidebar {
+    width: 300px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    overflow-y: auto;
+    /* background-color: gray !important; */
+  }
+  
+  .demo-app-sidebar-section {
+    margin-bottom: 2rem;
+  }
+  
+  .demo-app-sidebar-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .demo-app-sidebar-section ul {
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+  
+  .demo-app-sidebar-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Calendar specific styles */
+  .fc {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  
+  .fc .fc-toolbar {
+    padding: 1rem;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .fc .fc-view-harness {
+    height: calc(100% - 80px) !important;
+  }
+  
+  /* Event styles */
+  .fc-event {
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .demo-app {
+      flex-direction: column;
+    }
+  
+    .demo-app-sidebar {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .demo-app-main {
+      height: calc(100vh - 300px);
+    }
+  
+    .fc .fc-toolbar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .fc .fc-toolbar-title {
+      font-size: 1.2rem !important;
+    }
+  
+    .fc .fc-button {
+      padding: 0.2rem 0.5rem !important;
+    }
+  }
+  
+  /* Toggle checkbox style */
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Event list styles */
+  .demo-app-sidebar-section ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+  }
+  
+  .demo-app-sidebar-section ul li b {
+    margin-bottom: 3px;
+  }
+  
+  /* Calendar header styles */
+  .fc-header-toolbar {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Button styles */
+  .fc-button-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    transition: all 0.3s ease;
+  }
+  
+  .fc-button-primary:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+  }
+  
+  /* Today button specific style */
+  .fc-today-button {
+    font-weight: bold !important;
+  }
+  
+  /* Day header styles */
+  .fc-col-header-cell {
+
+    padding: 10px !important;
+  }
+  
+  /* Cell styles */
+  .fc-daygrid-day {
+    transition: background-color 0.2s;
+  }
+  
+  .fc-daygrid-day:hover {
+    cursor: pointer;
+    background-color:gray ;
+  }
+  
+  /* Today cell highlight */
+  .fc .fc-day-today {
+    background-color: rgba(0,123,255,0.1) !important;
+  }
+  
+  /* Event content styles */
+  .fc-event-title {
+    font-weight: normal;
+    padding: 2px;
+  }
+  
+  .fc-event-time {
+    font-weight: bold;
+  }
+  .fc .fc-col-header-cell-cushion{
+    color: grey;
+  }
+
+
+
+
+
+
+
+  /* Dark mode styles */
